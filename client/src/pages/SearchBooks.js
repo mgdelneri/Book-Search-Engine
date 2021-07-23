@@ -32,7 +32,7 @@ const SearchBooks = () => {
     }
 
     try {
-      const response = await fetch(`http://www.googleapis.com/books/v1/volumes?q=${searchInput}`);
+      const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput}`);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
@@ -50,8 +50,8 @@ const SearchBooks = () => {
 
       setSearchedBooks(bookData);
       setSearchInput('');
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      console.error(error);
     }
   };
 
